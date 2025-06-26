@@ -1,0 +1,48 @@
+# ---------------- Core Django + ASGI support ----------------
+asgiref==3.8.1                # ASGI support library used by Django for async handling
+Django==5.2.3                 # The Django web framework (core)
+
+# ---------------- Environment Configuration ----------------
+python-decouple==3.8          # Load settings from .env files
+
+# ---------------- Database Drivers ----------------
+psycopg2-binary==2.9.10       # PostgreSQL database adapter (binary version)
+sqlparse==0.5.3               # SQL parsing (used internally by Django)
+
+# ---------------- Time & Date Utilities ----------------
+python-dateutil==2.9.0.post0  # Advanced date/time handling
+pytz==2025.2                  # Timezone support (used by Django)
+
+# ---------------- Django Extensions ----------------
+django-cors-headers==4.7.0    # Handles CORS (Cross-Origin Resource Sharing)
+django-filter==25.1           # Adds filtering support to Django REST Framework
+djangorestframework==3.16.0   # Django REST Framework for building RESTful APIs
+drf-yasg==1.21.10             # Automatic OpenAPI/Swagger schema generation for DRF
+
+# ---------------- GraphQL Stack ----------------
+graphene==3.4.3               # Core GraphQL implementation for Python
+graphene-django==3.2.3        # Graphene integration with Django
+graphql-core==3.2.6           # Core GraphQL library used by Graphene
+graphql-relay==3.2.0          # Relay support (GraphQL pagination layer)
+promise==2.3                  # Used by Graphene for async handling
+
+# ---------------- WSGI Server ----------------
+gunicorn==23.0.0              # Production-grade WSGI server
+
+# ---------------- Testing ----------------
+iniconfig==2.1.0              # Used by pytest for reading INI-style config files
+pluggy==1.6.0                 # Plugin system used by pytest
+pytest==8.4.1                 # Python testing framework
+pytest-django==4.11.1         # Pytest plugin for Django integration
+
+# ---------------- Dev Tools & Formatting ----------------
+Pygments==2.19.2              # Syntax highlighting for code blocks
+PyYAML==6.0.2                 # YAML parser/emitter (used by drf-yasg and others)
+
+# ---------------- Miscellaneous Utilities ----------------
+inflection==0.5.1             # Singular/plural transformations (used by DRF/Graphene)
+packaging==25.0               # Used for version parsing and comparison
+six==1.17.0                   # Python 2/3 compatibility utility
+text-unidecode==1.3           # ASCII transliteration of Unicode text
+typing_extensions==4.14.0     # Extra type hints for older Python versions
+uritemplate==4.2.0            # URI templates (used by drf-yasg)
