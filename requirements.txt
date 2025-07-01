@@ -34,6 +34,7 @@ iniconfig==2.1.0              # Used by pytest for reading INI-style config file
 pluggy==1.6.0                 # Plugin system used by pytest
 pytest==8.4.1                 # Python testing framework
 pytest-django==4.11.1         # Pytest plugin for Django integration
+beautifulsoup4==4.13.4        # To check the HTML renders
 
 # ---------------- Dev Tools & Formatting ----------------
 Pygments==2.19.2              # Syntax highlighting for code blocks
