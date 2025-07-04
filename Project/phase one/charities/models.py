@@ -27,7 +27,24 @@ class Charity(models.Model):
     reg_number = models.CharField(max_length=10)
 
 
+class TaskManager(models.Manager):
+    def related_tasks_to_charity(self, user):
+        return self.filter(charity__user=user)
+
+    def related_tasks_to_benefactor(self, user):
+        return self.filter(assigned_benefactor__user=user)
+
+    def all_related_tasks_to_user(self, user):
+        return self.filter(
+            models.Q(assigned_benefactor__user=user)
+            | models.Q(charity__user=user)
+            | models.Q(state="P")
+        )
+
+
 class Task(models.Model):
+    objects = TaskManager()
+
     assigned_benefactor = models.ForeignKey(
         Benefactor, null=True, on_delete=models.SET_NULL, related_name="tasks"
     )
@@ -39,5 +56,5 @@ class Task(models.Model):
     gender_limit = models.CharField(
         max_length=1, choices=GENDER_CHOICES, null=True, blank=True
     )
-    state = models.CharField(max_length=1, default="P")
+    state = models.CharField(max_length=1, choices=STATE_CHOICES, default="P")
     title = models.CharField(max_length=60)
